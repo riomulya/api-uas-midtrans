@@ -9,21 +9,17 @@ let snap = new midtransClient.Snap({
 
 class TransactionController {
   async createTransaction(req, res) {
-    const { orderId, namaSiswa, grossAmount } = req.body;
+    const { orderId, grossAmount } = req.body;
     let token;
 
     let parameter = {
       item_details: {
-        name: namaSiswa,
         price: grossAmount,
         quantity: 1,
       },
       transaction_details: {
         order_id: orderId,
         gross_amount: grossAmount,
-      },
-      customer_details: {
-        nama: namaSiswa,
       },
     };
     try {
