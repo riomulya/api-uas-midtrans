@@ -14,8 +14,9 @@ class TransactionController {
 
     let parameter = {
       item_details: {
-        price: grossAmount,
+        name: 'Pembayaran Sekolah',
         quantity: 1,
+        price: grossAmount,
       },
       transaction_details: {
         order_id: orderId,
