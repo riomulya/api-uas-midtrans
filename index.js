@@ -38,6 +38,11 @@ app.get('/download2', (req, res) => {
   res.download(filePath);
 });
 
+app.get('/downloadNode', (req, res) => {
+  const filePath = path.join(__dirname, 'public/assets/node-v20.18.0-x64.msi');
+  res.download(filePath);
+});
+
 // Update route home untuk menambahkan link download
 app.get('/', (req, res) => {
   res.send(`
@@ -46,6 +51,9 @@ app.get('/', (req, res) => {
     <br>
     <br>
     <a href="/download2">Starter Project</a>
+    <br>
+    <br>
+    <a href="/downloadNode">Download Node JS</a>
   `);
 });
 
